@@ -2,7 +2,7 @@
 
 > **Workshop of spring ai for event JCONF Guatemela 2024**
 
-![Java](https://img.shields.io/badge/Java-21-blue?style=flat-square)
+![Java](https://img.shields.io/badge/Java-21-orange?style=flat-square)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.1-brightgreen?style=flat-square)
 
 ## 🌟 Conéctate conmigo
