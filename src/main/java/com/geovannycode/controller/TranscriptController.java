@@ -42,7 +42,7 @@ public class TranscriptController {
                 .withTemperature(0f)
                 .build();
 
-        ClassPathResource audioFile = new ClassPathResource("/audios/audio.ogg");
+        ClassPathResource audioFile = new ClassPathResource("/audios/audio.mp4");
 
         AudioTranscriptionPrompt transcriptionPrompt = new AudioTranscriptionPrompt(audioFile, options);
         AudioTranscriptionResponse response = transcriptionModel.call(transcriptionPrompt);
@@ -58,7 +58,7 @@ public class TranscriptController {
                 .withTemperature(0f)
                 .build();
 
-        ClassPathResource audioFile = new ClassPathResource("/audios/audio.ogg");
+        ClassPathResource audioFile = new ClassPathResource("/audios/audio.mp4");
 
         AudioTranscriptionPrompt transcriptionPrompt = new AudioTranscriptionPrompt(audioFile, options);
         AudioTranscriptionResponse response = transcriptionModel.call(transcriptionPrompt);
