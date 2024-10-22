@@ -1,0 +1,14 @@
+[
+  {
+    "firstName": "Geovanny",
+    "lastName": "Mendoza",
+    "country": "Colombia",
+    "urlPhoto": "https://example.com/geovanny_photo.jpg"
+  },
+  {
+    "firstName": "Otávio",
+    "lastName": "Santana",
+    "country": "Brasil",
+    "urlPhoto": "https://example.com/otavio_photo.jpg"
+  }
+]
