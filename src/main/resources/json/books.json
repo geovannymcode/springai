@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Building Modern Web Applications With JakartaEE",
+    "review": "Guía para crear aplicaciones modernas con JakartaEE, bases de datos NoSQL, MicroProfile y Vaadin.",
+    "author": { "idAuthor": 1 },
+    "urlCover": "https://example.com/building_modern_apps_cover.jpg",
+    "enabled": true
+  },
+  {
+    "name": "Mastering the Java Virtual Machine",
+    "review": "Guía sobre el funcionamiento interno de la JVM, gestión de memoria y optimización del rendimiento.",
+    "author": { "idAuthor": 2 },
+    "urlCover": "https://example.com/mastering_jvm_cover.jpg",
+    "enabled": true
+  }
+]
