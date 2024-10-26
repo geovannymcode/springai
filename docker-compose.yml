@@ -13,11 +13,11 @@ services:
     volumes:
       - postgres-data:${DB_VOLUME_URL}
 
-  chroma_db:
-    container_name: "chroma_db"
-    image: "ghcr.io/chroma-core/chroma:0.5.4"
-    env_file: ./.env
-    ports:
-      - ${CHROMA_LOCAL_PORT}:${CHROMA_DOCKER_PORT}
+#  chroma_db:
+#    container_name: "chroma_db"
+    #    image: "ghcr.io/chroma-core/chroma:0.5.4"
+    #    env_file: ./.env
+      #    ports:
+#      - ${CHROMA_LOCAL_PORT}:${CHROMA_DOCKER_PORT}
 volumes:
   postgres-data:
