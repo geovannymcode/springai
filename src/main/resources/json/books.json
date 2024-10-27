@@ -3,14 +3,24 @@
     "name": "Building Modern Web Applications With JakartaEE",
     "review": "Guía para crear aplicaciones modernas con JakartaEE, bases de datos NoSQL, MicroProfile y Vaadin.",
     "author": { "idAuthor": 1 },
-    "urlCover": "https://example.com/building_modern_apps_cover.jpg",
+    "urlCover": "https://github.com/geovannymcode/springai/blob/main/img/Foto_Libro1.jpg",
     "enabled": true
   },
   {
     "name": "Mastering the Java Virtual Machine",
     "review": "Guía sobre el funcionamiento interno de la JVM, gestión de memoria y optimización del rendimiento.",
     "author": { "idAuthor": 2 },
-    "urlCover": "https://example.com/mastering_jvm_cover.jpg",
+    "urlCover": "https://github.com/geovannymcode/springai/blob/main/img/Foto_Libro2.png",
+    "enabled": true
+  },
+  {
+    "name": "SpringAI y el Volcán de la IA",
+    "review": "SpringAI es un libro inventado por Geovanny Mendoza para este workshop en el JConf Guatemala 2024",
+    "author": {
+      "idAuthor": 1
+    },
+    "urlCover": "https://github.com/geovannymcode/springai/blob/main/img/Foto_Libro1.jpg",
     "enabled": true
   }
+
 ]
