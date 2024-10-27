@@ -3,12 +3,12 @@
     "firstName": "Geovanny",
     "lastName": "Mendoza",
     "country": "Colombia",
-    "urlPhoto": "https://example.com/geovanny_photo.jpg"
+    "urlPhoto": "https://github.com/geovannymcode/springai/blob/main/img/Foto_Geovanny.png"
   },
   {
     "firstName": "Otávio",
     "lastName": "Santana",
     "country": "Brasil",
-    "urlPhoto": "https://example.com/otavio_photo.jpg"
+    "urlPhoto": "https://github.com/geovannymcode/springai/blob/main/img/Foto_Otavio.jpeg"
   }
 ]

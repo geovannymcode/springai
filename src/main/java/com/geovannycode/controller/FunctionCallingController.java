@@ -9,6 +9,7 @@ import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,6 +26,19 @@ public class FunctionCallingController {
 
         ChatResponse response = openAiChatModel.call(new Prompt(List.of(userMessage),
                 OpenAiChatOptions.builder().withFunction("weatherFunction").build()));
+
+        String result = response.getResult().getOutput().getContent();
+
+        return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/book")
+    public ResponseEntity<String> getBookInfo(@RequestParam("bookName") String bookName){
+        UserMessage userMessage = new UserMessage("¿Cual es la información de este libro " + bookName + "?");
+
+        ChatResponse response = openAiChatModel.call(new Prompt(List.of(userMessage),
+                OpenAiChatOptions.builder().withFunction("BookInfo").build()
+        ));
 
         String result = response.getResult().getOutput().getContent();
 
