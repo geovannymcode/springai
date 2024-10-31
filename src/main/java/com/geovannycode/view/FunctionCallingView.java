@@ -8,6 +8,7 @@ import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.Route;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Route("book-info")
 @Menu(title = "Function Calling", order = 2)
@@ -24,12 +25,15 @@ public class FunctionCallingView extends VerticalLayout {
 
         // Botón de envío
         Button sendButton = new Button("Get Book Info");
+        Button clearButton = new Button("Clear");
 
         // Área de texto para mostrar la respuesta
         TextArea resultArea = new TextArea("Book Information:");
         resultArea.setWidth("600px");
         resultArea.setHeight("300px");
         resultArea.setReadOnly(true); // Solo lectura para mostrar la respuesta
+
+        HorizontalLayout buttonLayout = new HorizontalLayout(sendButton, clearButton);
 
         sendButton.addClickListener(click -> {
             String bookName = bookNameInput.getValue();
@@ -47,6 +51,12 @@ public class FunctionCallingView extends VerticalLayout {
             }
         });
 
-        add(bookNameInput, sendButton, resultArea);
+        // Botón para limpiar el área de respuesta
+        clearButton.addClickListener(click -> {
+            resultArea.clear();
+            bookNameInput.clear();
+        });
+
+        add(bookNameInput, buttonLayout, resultArea);
     }
 }

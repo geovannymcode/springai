@@ -4,9 +4,7 @@ import com.geovannycode.dto.ResponseDTO;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Paragraph;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.textfield.TextArea;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -14,6 +12,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.ResponseEntity;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Route("chat")
 @Menu(title = "Basic Calling", order = 1)
@@ -30,10 +29,14 @@ public class BasicCallView extends VerticalLayout {
         messageInput.setHeight("150px"); // Ajusta la altura del área de texto
 
         Button sendButton = new Button("Send");
+        Button clearButton = new Button("Clear");
 
         // Area para mostrar la respuesta
         VerticalLayout messages = new VerticalLayout();
         messages.setWidth("600px");
+
+        // Layout horizontal para los botones
+        HorizontalLayout buttonLayout = new HorizontalLayout(sendButton, clearButton);
 
         sendButton.addClickListener(click -> {
             String message = messageInput.getValue();
@@ -63,7 +66,13 @@ public class BasicCallView extends VerticalLayout {
             }
         });
 
-        add(messageInput, sendButton, messages);
+        // Botón para limpiar el área de mensajes
+        clearButton.addClickListener(click -> {
+            messages.removeAll();
+            messageInput.clear();
+        });
+
+        add(messageInput, buttonLayout, messages);
     }
 }
 
