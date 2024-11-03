@@ -1,3 +1,3 @@
 # Spring AI
 
-Demo spring ai
+Demo spring ai for event JCONF Guatemela 2024
