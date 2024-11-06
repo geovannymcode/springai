@@ -11,7 +11,7 @@ import org.springframework.ai.openai.OpenAiImageModel;
 import org.springframework.ai.openai.OpenAiImageOptions;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.util.MimeTypeUtils;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,8 +26,8 @@ public class MultiModalityController {
 
     private final OpenAiChatModel openAiChatModel;
     private final OpenAiImageModel openAiImageModel;
-
-    @GetMapping("/upload")
+    
+    @PostMapping("/upload")
     public String multiModalityUpload(@RequestParam("image") MultipartFile imageFile) throws Exception{
         UserMessage userMessage = new UserMessage(
                 "Explicame que ves en esta imagen?",
@@ -37,7 +37,7 @@ public class MultiModalityController {
         ChatResponse response = openAiChatModel.call(new Prompt(List.of(userMessage)));
         String description = response.getResult().getOutput().getContent();
 
-        String url = openAiImageModel.call(new ImagePrompt("Generame una caricatura de esta descripcion: " + description,
+        return openAiImageModel.call(new ImagePrompt("Generame una caricatura de esta descripcion: " + description,
                 OpenAiImageOptions.builder()
                         .withModel("dall-e-3")
                         .withQuality("standard")
@@ -46,7 +46,5 @@ public class MultiModalityController {
                         .withWidth(1024)
                         .build()
         )).getResult().getOutput().getUrl();
-
-        return url;
     }
 }

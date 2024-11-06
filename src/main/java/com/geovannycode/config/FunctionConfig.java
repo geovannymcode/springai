@@ -1,7 +1,5 @@
 package com.geovannycode.config;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.geovannycode.repo.IBookRepo;
 import com.geovannycode.service.impl.BookFunctionServiceImpl;
 import com.geovannycode.service.impl.MockWeatherService;
@@ -28,13 +26,6 @@ public class FunctionConfig {
                 .withName("BookInfo")
                 .withDescription("Get book info from book name")
                 .withResponseConverter( (response -> "" + response.books()))
-                /*.withResponseConverter(response -> {
-                    try {
-                        return new ObjectMapper().writeValueAsString(response.books());
-                    } catch (JsonProcessingException e) {
-                        throw new RuntimeException(e);
-                    }
-                })*/
                 .build();
     }
 }
