@@ -26,7 +26,7 @@ public class MultiModalityController {
 
     private final OpenAiChatModel openAiChatModel;
     private final OpenAiImageModel openAiImageModel;
-    
+
     @PostMapping("/upload")
     public String multiModalityUpload(@RequestParam("image") MultipartFile imageFile) throws Exception{
         UserMessage userMessage = new UserMessage(
